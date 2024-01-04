@@ -44,26 +44,30 @@ const Contact = () => {
         <meta name="description" content="Contact page for the team members" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="max-h-full w-screen min-w-full max-w-full flex flex-col items-center justify-center bg-transparent space-x-20 space-y-10">
+      <main className="flex max-h-full w-screen min-w-full max-w-full flex-col items-center justify-center space-x-20 space-y-10 bg-transparent">
         <Header />
-        <div className=" container mx-auto px-4 py-8 space-y-10 ">
+        <div className=" container mx-auto space-y-10 px-4 py-8 ">
           <h1 className="text-5xl font-bold text-white">Meet Our Team</h1>
-          <div className="mt-8 flex flex-wrap gap-8 justify-center bg-transparent ">
+          <div className="mt-8 flex flex-wrap justify-center gap-8 bg-transparent ">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="group inline-block overflow-hidden rounded-2xl bg-gradient-to-tr from-purple-800 to-teal-400 p-1 pb-4 text-white shadow transition hover:shadow-md w-[250px] h-[380px]"
+                className="group inline-block h-[380px] w-[250px] overflow-hidden rounded-2xl bg-gradient-to-tr from-purple-800 to-teal-400 p-1 pb-4 text-white shadow transition hover:shadow-md"
               >
                 <figure className="aspect-square max-h-64 overflow-hidden ">
-                <a href={member.image} target="_blank" rel="noopener noreferrer">
-                  <Image
-                    className="h-full w-full object-cover transition group-hover:scale-110 rounded-2xl"
-                    src={member.image}
-                    loader={({ src }) => src}
-                    alt="Profile"
-                    width={55}
-                    height={55}
-                  />
+                  <a
+                    href={member.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      className="h-full w-full rounded-2xl object-cover transition group-hover:scale-110"
+                      src={member.image}
+                      loader={({ src }) => src}
+                      alt="Profile"
+                      width={55}
+                      height={55}
+                    />
                   </a>
                 </figure>
 
@@ -73,9 +77,8 @@ const Contact = () => {
                 <div className="mt-4 text-center">
                   <div className="flex items-center justify-center">
                     {' '}
-
                     <Image
-                      src="/../public/assets/linkedin-icon-update.png"
+                      src="/assets/linkedin-icon-update.png"
                       alt="LinkedIn"
                       width={10}
                       height={10}
@@ -93,7 +96,7 @@ const Contact = () => {
                   <div className="flex items-center justify-center">
                     {' '}
                     <Image
-                      src="/../public/assets/github-mark-white-.png"
+                      src="/assets/github-mark-white-.png"
                       alt="GitHub"
                       width={10}
                       height={10}
